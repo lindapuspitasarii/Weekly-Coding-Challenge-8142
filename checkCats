@@ -1,0 +1,25 @@
+def checkCats(CatsTuti, CatsNining):
+    # 1. Menghapus usia anjing dari array CatsTuti
+    correctedCatsTuti = CatsTuti.copy()
+    correctedCatsTuti.pop(0)  # Hapus usia anjing dari Kucing Pertama
+    correctedCatsTuti.pop()   # Hapus usia anjing dari dua Kucing Terakhir
+
+    # 2. Menggabungkan data Tuti yang sudah dikoreksi dengan data Nining
+    allCats = correctedCatsTuti + CatsNining
+
+    # 3. Mengecek setiap kucing dan menampilkan apakah dewasa atau kitten
+    for i, usia in enumerate(allCats, start=1):
+        if usia >= 3:
+            print(f"Kucing Nomor {i} adalah Kucing Dewasa, dan berusia {usia} tahun.")
+        else:
+            print(f"Kucing Nomor {i} masih anak-anak.")
+
+# Data uji 1
+DataTuti1 = [3, 5, 2, 12, 7]
+DataNining1 = [4, 1, 15, 8, 3]
+checkCats(DataTuti1, DataNining1)
+
+# Data uji 2
+DataTuti2 = [9, 16, 6, 8, 3]
+DataNining2 = [10, 5, 6, 1, 4]
+checkCats(DataTuti2, DataNining2)
